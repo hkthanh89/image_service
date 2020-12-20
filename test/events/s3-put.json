@@ -1,0 +1,38 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-east-1",
+      "eventTime": "2020-12-20T13:20:01.891Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:AIDAR6Z4Z3U62LLBT2NUA"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "42.112.225.190"
+      },
+      "responseElements": {
+        "x-amz-request-id": "E5F18D1D39076FDA",
+        "x-amz-id-2": "5bxMe3AOy+Xq0AWwOpFHNRb3jDJtyEeBo6U0FNz4uVKJrc1zIG6o6V9BkSCAEWrAApiNys4CG8etPETxW2COJtba/eM31Byu"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "bd301cc8-fc8a-4cc6-895a-7ba59ac71e7a",
+        "bucket": {
+          "name": "image-service-thanh-12122020-production",
+          "ownerIdentity": {
+            "principalId": "A21GL9E6T9BJJR"
+          },
+          "arn": "arn:aws:s3:::image-service-thanh-12122020-production"
+        },
+        "object": {
+          "key": "RubyForGood.png",
+          "size": 659624,
+          "eTag": "a2028b43a11dd778720371ceaf53dde5",
+          "sequencer": "005FDF4F85E51BF899"
+        }
+      }
+    }
+  ]
+}

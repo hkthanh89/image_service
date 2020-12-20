@@ -28,10 +28,20 @@ Resources:
         Variables:
           STAGE_ENV: !Ref StageEnv
           RUBYOPT: '-W0'
+      Events:
+        ImageServiceS3BucketEvent:
+          Type: S3
+          Properties:
+            Bucket: !Ref ImageServiceS3Bucket
+            Events: s3:ObjectCreated:*
+  ImageServiceS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub image-service-thanh-12122020-${StageEnv}
 
 Outputs:
 
   ImageServiceLambdaArn:
     Description: Lambda Function Arn
     Value: !GetAtt ImageServiceLambda.Arn
-  
+
