@@ -1,14 +1,13 @@
 require 'json'
 require 'dotenv'
-# Add your gem requires here:
-# require 'some_gem'
 require_relative './image_service/env'
-# Add your additional lib PORO requires here:
-# require_relative './image_service/some_poro
+require_relative './image_service/resizer'
 
 def handler(event:, context:)
-  puts event
+  key = event['Records'][0].dig('s3','object','key')
+  resizer = ImageService::Resizer.new(key, 200)
+  resizer.resize!
   { statusCode: 200,
     headers: [{'Content-Type' => 'application/json'}],
-    body: JSON.dump(event) }
+    body: JSON.dump({key: key}) }
 end

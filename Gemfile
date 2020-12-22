@@ -3,6 +3,8 @@ git_source(:github) { |repo| "git@github.com:#{repo}.git" }
 
 gem 'dotenv'
 
+gem 'image_processing'
+
 group :development do
   gem 'rake'
 end

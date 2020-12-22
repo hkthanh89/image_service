@@ -34,6 +34,17 @@ Resources:
           Properties:
             Bucket: !Ref ImageServiceS3Bucket
             Events: s3:ObjectCreated:*
+      Layers:
+        - arn:aws:lambda:us-east-1:589405201853:layer:rubyvips892-27:13
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - s3:*
+              Resource:
+                - !Sub arn:aws:s3:::image-service-thanh-12122020-${StageEnv}
+                - !Sub arn:aws:s3:::image-service-thanh-12122020-${StageEnv}/*
   ImageServiceS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
